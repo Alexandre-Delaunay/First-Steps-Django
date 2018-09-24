@@ -14,10 +14,10 @@
     {% for article in articles %}
 
     <article>
-        <h2><a href="/blog/articles/{{ article.id }}">#{{ article.id }} - {{ article.title|upper }}</a></h2>
+        <h2><a href="{% url 'blog:show' id=article.id %}">#{{ article.id }} - {{ article.title|upper }}</a></h2>
         <p> {{ article.body|truncatewords:3 }}</p>
 
-        <p><a href="/blog/articles/{{ article.id}}">Lire la suite</a></p>
+        <p><a href="{% url 'blog:show' id=article.id %}">Lire la suite</a></p>
     </article>
 
 
